@@ -1,0 +1,4 @@
+3.webpack的配置
+webpack.config.json node.js环境下执行的（js文件，前端的文件src是在浏览器环境下执行的，配置文件是node环境下执行的） 需要遵循node的语法 module.exports
+里面有许多配置项，如mode 可以指定development或者production表示开发环境/生产环境 
+开发环境下不压缩代码 速度快 便于调试；生产环境下 压缩代码 开启Tree Shaking 开启优化 适合于部署上线

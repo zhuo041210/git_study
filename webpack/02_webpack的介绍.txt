@@ -1,0 +1,14 @@
+2.webpack的介绍
+
+再说说关于模块化是否需要module的问题：想要js代码运作起来，可以使用node环境（node main.js）或者浏览器环境（html）
+js文件互相引用的时候，直接写import和export就行（node.js环境下没有任何问题）
+但是一旦涉及到浏览器的script标签，
+1.对于行内script标签，如果引用的js文件内不再含有import/export模块化语法，则不用开启module模式；如若有模块化语法，则必须加上module
+2.对于大的script标签（和style，html并列的标签），如果内部需要使用import标签，那么一定需要module，即便引入的文件内不含有模块化语法
+其实核心理解就是，我引入的文件里是否有模块化语法，有则使用module，无则不使用module
+
+webpack就是把所有的同类型文件合成一个或多个文件，减少网络请求次数，也在一定程度上减少了模块化
+
+记得安装webpack和webpack-cli 其中webpack为主体 webpack-cli为webpack的命令行工具 让webpack能在终端中使用命令行进行操作
+对于安装的时候是否需要加 -D（dependencies和devDependencies）  -D代表开发环境（即生产环境不需要） webpack就是典型的开发环境需要使用（打包文件），生产环境并不需要（因为文件已经打包好了） 所以只用-D即可
+而对于axios这种生产环境里也需要使用的第三方库 不能加上-D安装  是否需要-D取决于生产环境里是否需要继续使用 
